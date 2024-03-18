@@ -5,4 +5,9 @@
     <string name="loveAndroid">I Love Android</string>
     <string name="switchText">Switch on/off</string>
     <string name="checkBoxText">Check this out!</string>
+    <string name="toastMessage">hello from toast</string>
+    <string name="snackMessage">Check box is</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+    <string name="undo">Undo</string>
 </resources>

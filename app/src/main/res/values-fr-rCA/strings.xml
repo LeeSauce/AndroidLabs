@@ -3,6 +3,11 @@
     <string name="helloWorld">Bonjour tout le monde</string>
     <string name="buttonText">Appuyez-moi</string>
     <string name="loveAndroid">J\'aime Android</string>
-    <string name="switchText">Interrupteur Allumé/éteint</string>
+    <string name="switchText">Interrupteur allumé/éteint</string>
     <string name="checkBoxText">Regarde ça!</string>
+    <string name="toastMessage">bonjour du toast</string>
+    <string name="snackMessage">La case à cocher est</string>
+    <string name="on">allumé</string>
+    <string name="off">éteint</string>
+    <string name="undo">annuler</string>
 </resources>
