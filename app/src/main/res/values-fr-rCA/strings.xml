@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
     <string name="helloWorld">Bonjour tout le monde</string>
-    <string name="buttonText">Je suis un bouton</string>
+    <string name="buttonText">Appuyez-moi</string>
+    <string name="loveAndroid">J\'aime Android</string>
+    <string name="switchText">Interrupteur Allumé/éteint</string>
+    <string name="checkBoxText">Regarde ça!</string>
 </resources>
