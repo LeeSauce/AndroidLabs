@@ -1,13 +1,8 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="helloWorld">Hello World</string>
-    <string name="buttonText">Press Me!</string>
-    <string name="loveAndroid">I Love Android</string>
-    <string name="switchText">Switch on/off</string>
-    <string name="checkBoxText">Check this out!</string>
-    <string name="toastMessage">hello from toast</string>
-    <string name="snackMessage">Check box is</string>
-    <string name="on">on</string>
-    <string name="off">off</string>
-    <string name="undo">Undo</string>
+    <string name="textView">Enter your name</string>
+    <string name="next">Next</string>
+    <string name="welcomeText">Welcome</string>
+    <string name="reject">Don\'t call me that</string>
+    <string name="accept">Thank you</string>
 </resources>

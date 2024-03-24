@@ -1,5 +1,7 @@
 package com.example.androidlabs;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -22,31 +25,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main_contraint);
+        setContentView(R.layout.activity_main);
 
-        Button button = (Button)findViewById(R.id.myButton);
-        TextView txt = (TextView)findViewById(R.id.loveAndroid);
-        EditText editTxt = (EditText)findViewById(R.id.myEditText);
-        CheckBox checkBox = (CheckBox)findViewById(R.id.myCheckBox);
+        EditText txtEdit = (EditText)findViewById(R.id.nameEntry);
+        Button nextButton = (Button)findViewById(R.id.nextButton);
 
-        button.setOnClickListener((btn) -> {
-                txt.setText(editTxt.getText());
-                Toast.makeText(this,getResources().getString(R.string.toastMessage)
-                        ,Toast.LENGTH_SHORT ).show();
-            });
 
-        checkBox.setOnCheckedChangeListener((check, isChecked) ->{
-            String status = checkBox.isChecked() == true ?
-                    getResources().getString(R.string.on):getResources().getString(R.string.off);
-            Snackbar.make(checkBox, getResources().getString(R.string.snackMessage)
-                            +" " + status, Snackbar.LENGTH_SHORT)
-                    .setAction(getResources().getString(R.string.undo), click ->
-                            checkBox.setChecked(!isChecked)).show();
+        Intent namePage = new Intent(this, NameActivity.class);
+
+        nextButton.setOnClickListener((next) -> {
+            namePage.putExtra("name", txtEdit.getText().toString());
+
+            startActivityForResult(namePage, 445);
 
         });
-
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -54,4 +46,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
 }
