@@ -30,7 +30,7 @@ public class NameActivity extends AppCompatActivity {
         welcomeMessage.append(welcome.getText());
 
         String name = data.getStringExtra("name");
-        if(name != null){
+        if(!name.isEmpty()){
             welcomeMessage.append(" ");
             welcomeMessage.append(name);
         }
