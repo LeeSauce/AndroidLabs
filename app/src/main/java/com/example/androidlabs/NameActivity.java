@@ -39,12 +39,12 @@ public class NameActivity extends AppCompatActivity {
 
 
         reject.setOnClickListener((click) ->{
-            setResult(0);
+            setResult(0, data);
             finish();
         });
 
         accept.setOnClickListener((click) ->{
-            setResult(1);
+            setResult(1, data);
             finish();
         });
 

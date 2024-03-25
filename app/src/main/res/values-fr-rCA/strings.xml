@@ -5,5 +5,8 @@
     <string name="welcomeText">Bienvenu</string>
     <string name="reject">Ne m\'appelle pas comme ça</string>
     <string name="accept">Merci</string>
+    <string name="savedMessage">Nom enregistré</string>
+    <string name="errorMessage">Erreur! Le nom n\'a pas été enregistré</string>
+
 
 </resources>

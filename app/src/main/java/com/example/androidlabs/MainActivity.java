@@ -1,5 +1,6 @@
 package com.example.androidlabs;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -30,14 +32,22 @@ public class MainActivity extends AppCompatActivity {
         EditText txtEdit = (EditText)findViewById(R.id.nameEntry);
         Button nextButton = (Button)findViewById(R.id.nextButton);
 
-
         Intent namePage = new Intent(this, NameActivity.class);
+
+
+        SharedPreferences pref = getSharedPreferences("PREFS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        txtEdit.setText(pref.getString("savedName", ""));
 
         nextButton.setOnClickListener((next) -> {
             namePage.putExtra("name", txtEdit.getText().toString());
-
-            startActivityForResult(namePage, 445);
-
+            editor.putString("savedName", txtEdit.getText().toString());
+            if(editor.commit()){
+                Toast.makeText(this, R.string.savedMessage, Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, R.string.errorMessage, Toast.LENGTH_SHORT).show();
+            }
+            startActivityForResult(namePage, 1);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -52,4 +62,11 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 1){
+            finish();
+        }
+    }
 }
