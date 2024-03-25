@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         EditText txtEdit = (EditText)findViewById(R.id.nameEntry);
         Button nextButton = (Button)findViewById(R.id.nextButton);
 
+
         Intent namePage = new Intent(this, NameActivity.class);
 
 
@@ -40,13 +41,8 @@ public class MainActivity extends AppCompatActivity {
         txtEdit.setText(pref.getString("savedName", ""));
 
         nextButton.setOnClickListener((next) -> {
+            setName(editor, txtEdit);
             namePage.putExtra("name", txtEdit.getText().toString());
-            editor.putString("savedName", txtEdit.getText().toString());
-            if(editor.commit()){
-                Toast.makeText(this, R.string.savedMessage, Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(this, R.string.errorMessage, Toast.LENGTH_SHORT).show();
-            }
             startActivityForResult(namePage, 1);
         });
 
@@ -67,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == 1){
             finish();
+        }
+    }
+
+    public void setName(SharedPreferences.Editor editor, EditText txtEdit){
+        editor.putString("savedName", txtEdit.getText().toString());
+        if(editor.commit()){
+            Toast.makeText(this, R.string.savedMessage, Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, R.string.errorMessage, Toast.LENGTH_SHORT).show();
         }
     }
 }

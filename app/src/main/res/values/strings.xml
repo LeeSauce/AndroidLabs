@@ -7,5 +7,4 @@
     <string name="accept">Thank you</string>
     <string name="savedMessage">Name saved</string>
     <string name="errorMessage">Error! Name did not save</string>
-
 </resources>
