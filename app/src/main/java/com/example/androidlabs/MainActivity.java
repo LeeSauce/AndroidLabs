@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = (EditText)findViewById(R.id.textEdit);
         Switch mySwitch = (Switch)findViewById(R.id.mySwitch);
 
+        String message = getString(R.string.alMessage);
+
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
 
@@ -52,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         list.setOnItemClickListener( (par, v, pos, id)->{
-                alert.setTitle("Alert!")
+            //stringBuilder.append(adapter.elements.get(pos));
+                alert.setTitle(R.string.alert).setMessage(message +" " + pos)
                         .setPositiveButton("Yes", (click, arg)->{
                             adapter.elements.remove(pos);
                             adapter.isUrgent.remove(pos);

@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="type">Type here</string>
-    <string name="urgentText">Urgent</string>
-    <string name="addText">ADD</string>
+    <string name="type">Écrivez Ici</string>
+    <string name="urgentText">Urgente</string>
+    <string name="addText">AJOUTER</string>
+    <string name="alert">Voulez-vous supprimer ceci?</string>
+    <string name="alMessage">La ligne sélectionnée est:</string>
 
 </resources>

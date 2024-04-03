@@ -3,4 +3,6 @@
     <string name="type">Type here</string>
     <string name="urgentText">Urgent</string>
     <string name="addText">ADD</string>
+    <string name="alert">Do you want to delete this?</string>
+    <string name="alMessage">The selected row is:</string>
 </resources>
